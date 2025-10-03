@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Potassium</title>
+  <link rel="icon" href="https://i.ibb.co/vxSNPQNr/Untitled1-20251002162640.png" type="image/png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
+
+    #intro h1 {
+      font-size: 120px;
+      color: #000;
+      animation: scaleFade 1.5s ease forwards;
+    }
+
+    @keyframes scaleFade {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 320px;
+      text-align: center;
+      background: #fff;
+      color: #000;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .pack-image {
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .pack-image:hover { transform: scale(1.05) rotate(-1deg); }
+
+    h1 { margin: 14px 0 10px; font-size: 20px; color: #000; }
+    p { color: #000; margin: 0 0 8px; font-size: 14px; line-height: 1.5; }
+
+    .downloads { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; width: 100%; }
+
+    .btn {
+      border: 0;
+      padding: 12px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight:700;
+      font-size: 14px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 44px;
+    }
+    .btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+    .version-selector { position: relative; display: flex; justify-content: center; margin-top: 12px; width: 100%; }
+    .version-btn {
+      border: 1px solid #ccc;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      min-height: 44px;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .version-btn:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.15); background: #f0f0f0; }
+
+    .version-list {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      z-index: 10;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+    .version-item {
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      min-height: 40px;
+    }
+    .version-item:hover { background: #f0f0f0; transform: translateX(2px); }
+    .version-item.selected { background: #d0d0d0; font-weight: 700; }
+
+    @media (max-width: 480px) {
+      .pack-image { max-width: 160px; }
+      h1 { font-size: 18px; }
+      p { font-size: 12px; }
+      .btn, .version-btn { font-size: 13px; padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="intro"><h1>V</h1></div>
+
+  <div class="container" id="mainContainer">
+    <img src="https://i.ibb.co/m5N5zNXZ/2dbc5efd-69bf-4fab-961c-97b7491d4ca8-vibrant-red-eyes-on-black-figure-top-rated-anime-black-pfp-3.png" alt="Pack Image" class="pack-image" id="packImage">
+    <h1>RENEX</h1>
+    <p>RENEX is an FPS optimization modpack for Minecraft 1.21.8, designed to improve frame rates in survival and server</p>
+    <div style="color: green; font-weight: bold; font-size: 16px;">1000+ FPS</div>
+    <p><span style="color:red;">Note:</span> use diff renderer if crashes</p>
+
+
+    <div class="version-selector">
+      <div id="versionBtn" class="version-btn">Select Version ▾</div>
+      <div id="versionList" class="version-list"></div>
+    </div>
+
+    <div class="downloads" id="downloads"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const intro = document.getElementById('intro');
+      const container = document.getElementById('mainContainer');
+      const versions = [
+        { name: 'v1.0 - survival', link: 'https://oii.la/3FeQL', image: 'https://i.ibb.co/m5N5zNXZ/2dbc5efd-69bf-4fab-961c-97b7491d4ca8-vibrant-red-eyes-on-black-figure-top-rated-anime-black-pfp-3.png' },
+        { name: '', link: 'https://example.com/downloads/pack-v1.1.zip', image: '' },
+        { name: '', link: 'https://example.com/downloads/pack-v1.0.zip', image: '' }
+      ];
+
+      const versionBtn = document.getElementById('versionBtn');
+      const versionList = document.getElementById('versionList');
+      const downloadsDiv = document.getElementById('downloads');
+      const packImage = document.getElementById('packImage');
+      let selectedVersion = null;
+
+      setTimeout(() => {
+        intro.style.opacity = '0';
+        setTimeout(() => { intro.style.display = 'none'; container.style.opacity = '1'; }, 800);
+      }, 1500);
+
+      versions.forEach(v => {
+        const div = document.createElement('div');
+        div.className = 'version-item';
+        div.textContent = v.name;
+        div.addEventListener('click', () => {
+          selectedVersion = v;
+          document.querySelectorAll('.version-item').forEach(el => el.classList.remove('selected'));
+          div.classList.add('selected');
+          versionBtn.textContent = `${v.name} ▾`;
+          packImage.src = v.image;
+          versionList.style.display = 'none';
+          updateDownloadButton();
+        });
+        versionList.appendChild(div);
+      });
+
+      versionBtn.addEventListener('click', () => {
+        versionList.style.display = versionList.style.display === 'block' ? 'none' : 'block';
+      });
+
+      function updateDownloadButton(){
+        downloadsDiv.innerHTML = '';
+        if(selectedVersion){
+          const a = document.createElement('a');
+          a.href = selectedVersion.link;
+          a.textContent = `Download ${selectedVersion.name}`;
+          a.className = 'btn';
+          downloadsDiv.appendChild(a);
+        }
+      }
+
+      document.addEventListener('click', (e) => {
+        if(!versionBtn.contains(e.target) && !versionList.contains(e.target)){
+          versionList.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
